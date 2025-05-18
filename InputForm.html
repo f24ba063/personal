@@ -5,121 +5,114 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="個人情報入力画面">
         <title>個人情報入力画面</title>
-        <link rel = "stylesheet" href = "style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <!-- 設置されている物は以下の通り -->
-        <!--名前、郵便番号、住所、電話番号、eメール-->
-        <!-- 更新ボタン、削除ボタン -->
-        <!-- 各フォームには「入力要素名」「必須マーク」、
-         「入力空間」「個別削除ボタン」「不正入力警告」 -->
-
         <header>
-            <h1 id = "head">入力フォーム</h1>
+            <h1 id="head">入力フォーム</h1>
         </header>
 
-
         <!-- 名前 -->
-        <span class = "input-wrapper">
-            <span class = "input-label">
+        <span class="input-wrapper">
+            <span class="input-label">
                 <label for="NAME">名前：</label>
                 <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
-            <span class = "inners">
-                <input type = "text" id = "NAME" name = "NAME" placeholder="中央　太郎">
-                <span id = 'nameClear'>x</span>
+            <span class="inners">
+                <input type="text" id="NAME" name="NAME" placeholder="中央　太郎">
+                <span id="nameClear">x</span>
             </span>
             <label id="nameAlert">※名前を入力してください</label>
             <br><br>
         </span>
 
         <!-- ふりがな -->
-        <span class = "input-wrapper">
-            <span class = "input-label">
-                <label for ="FURIGANA">ふりがな：</label>
+        <span class="input-wrapper">
+            <span class="input-label">
+                <label for="FURIGANA">ふりがな：</label>
                 <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
-            <span class = "inners">
+            <span class="inners">
                 <input type="text" id="FURIGANA" oninput="CheckInTouch(this, document.getElementById('furiganaAlert'))" 
                 name="FURIGANA" placeholder="ちゅうおう　たろう">
-                <span id = 'furiganaClear'>x</span>
+                <span id="furiganaClear">x</span>
             </span>
             <label id="furiganaAlert">※ふりがなを入力してください</label>
             <br><br>
         </span>
 
         <!-- 郵便番号 -->
-        <span class = "input-wrapper">
-            <span class = "input-label">
+        <span class="input-wrapper">
+            <span class="input-label">
                 <label for="POST">郵便番号：</label>
                 <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
-            <span class = "inners">
-                <input type = "text" id = "POST" oninput="CheckInTouch(this, document.getElementById('postAlert'))"
-                name = "POST" maxlength = '8' placeholder="3700841">
-                <span id = 'postClear'>x</span>
+            <span class="inners">
+                <input type="text" id = "POST" oninput="CheckInTouch(this, document.getElementById('postAlert'))"
+                name="POST" maxlength="8" placeholder="3700841">
+                <span id='postClear'>x</span>
             </span>
             <label id="postAlert">※郵便番号を半角数字7文字で入力してください</label>
             <br><br>
         </span>
 
         <!-- 住所 -->
-        <span class = "input-wrapper">
-            <span class = "input-label">
+        <span class="input-wrapper">
+            <span class="input-label">
                 <label for="ADDRESS">住所：</label>
                 <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
-            <span class = "inners">
-                <input type = "text" id = "ADDRESS" name = "ADDRESS" placeholder="群馬県高崎市栄町１３−２">
-                <span id = 'addressClear'>x</span>
+            <span class="inners">
+                <input type="text" id = "ADDRESS" name = "ADDRESS" placeholder="群馬県高崎市栄町１３−２">
+                <span id="addressClear">x</span>
             </span>
             <label id="addressAlert">※住所を入力してください</label>
             <br><br>
         </span>
 
         <!-- 電話番号 -->
-        <span class = "input-wrapper">
-            <span class = "input-label">
+        <span class="input-wrapper">
+            <span class="input-label">
                 <label for="TEL">電話番号：</label>
                 <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
-            <span class = "inners">
-                <input type = "tel" id = "TEL" oninput="CheckInTouch(this, document.getElementById('telAlert'))"
-                name = "TEL" maxlength='12' placeholder="0273248511">
-                <span id = 'telClear'>x</span>
+            <span class="inners">
+                <input type="tel" id = "TEL" oninput="CheckInTouch(this, document.getElementById('telAlert'))"
+                name="TEL" maxlength='12' placeholder="0273248511">
+                <span id="telClear">x</span>
             </span>
             <label id="telAlert">※電話番号を半角10～11文字で入力してください</label>
             <br><br>
         </span>
 
         <!-- eメール -->
-        <span class = "input-wrapper">
-            <span class = "input-label">
+        <span class="input-wrapper">
+            <span class="input-label">
                 <label for="MAIL">eメール：</label>
                 <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
-            <span class = "inners">
-                <input type = "email" id = "MAIL" name = "MAIL" placeholder="email@chuo.ac.jp">
-                <span id = 'mailClear'>x</span>
+            <span class="inners">
+                <input type="email" id="MAIL" name="MAIL" placeholder="email@chuo.ac.jp">
+                <span id="mailClear">x</span>
             </span>
             <label id="mailAlert">※eメールを入力してください</label>
             <br><br>
         </span>
 
-        <div id = "button-wrapper">
-            <button id = "update">更新</button>
-            <button id = "delete">削除</button>
+        <div id="button-wrapper">
+            <button id="update">更新</button>
+            <button id="delete">削除</button>
         </div>  
 
         <div id="save-popup" class="popup hidden">更新しました。</div>
         <div id="delete-popup" class="popup hidden">クリアしました。</div>
 
-        <script src = "script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html> 
