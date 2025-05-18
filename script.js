@@ -1,23 +1,3 @@
-/*
-作ったもの：
-名前、ふりがな、郵便番号、住所、電話番号、eメール、「必須」スタンプ」、赤文字の不正入力アラートテキスト
-「更新」（保存）ボタン、「削除」（全入力テキスト一括削除）ボタン、個別テキスト削除ボタン、更新時のポップ
-
-気を付けたこと：
-ふりがなはひらがなしか入力できないように。「は」と入力する途中の「ｈ」を入力する段階で
-いちいち赤文字を出さないように。郵便番号、電話番号は半角数字しか入力できないように、
-入力桁を郵便は8桁、電話番号は12桁に制限。「桁の過剰」を確認できる最小の桁数を指定。
-個別テキスト削除ボタンでアラートも消す。アラートは自己主張しすぎてユーザーに不快な体験を与えないように。
-入力テキスト、アラート、個別削除ボタンを紐づけしてリスト化することで一括制御。
-見通しをよくすると同時にメンテナンス性も上げる。
-
-今後の課題：
-保守性の向上。どこにどんな変数があって何に使うかを、知覚負荷を与えず理解できるように
-レスポンシブデザイン
-カードデザイン
-疑似的なログイン制御
-*/
-
 //データ読込処理
 load();
 
@@ -154,20 +134,18 @@ function CheckOnTouch(input, alert){
     }
 }
 
+//「更新」「削除」ボタンに伴うポップアップの制御関数
 function popupControl(popup){
-    popup.classList.remove('hiddenText');
-    popup.classList.remove('hide');
+    popup.classList.remove('hidden');
     popup.classList.add('show');
 
-    setTimeout(() => {
+    const onAnimationEnd = () => {
         popup.classList.remove('show');
-        popup.classList.add('hide');
+        popup.classList.add('hidden');
+        popup.removeEventListener('animation', onAnimationEnd);
+    };
 
-        setTimeout(() => {
-            popup.classList.remove('hide');
-            popup.classList.add('hiddenText');
-        },1000);
-    },2000)
+    popup.addEventListener('animationend', onAnimationEnd);
 };
 
 //「削除」ボタン押下時の動き

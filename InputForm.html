@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta description="個人情報入力画面">
+        <meta name="description" content="個人情報入力画面">
         <title>個人情報入力画面</title>
         <link rel = "stylesheet" href = "style.css">
     </head>
@@ -14,7 +14,6 @@
         <!-- 各フォームには「入力要素名」「必須マーク」、
          「入力空間」「個別削除ボタン」「不正入力警告」 -->
 
-
         <header>
             <h1 id = "head">入力フォーム</h1>
         </header>
@@ -23,8 +22,8 @@
         <!-- 名前 -->
         <span class = "input-wrapper">
             <span class = "input-label">
-                <label>名前：</label>
-                <label class="need">必須</label>
+                <label for="NAME">名前：</label>
+                <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
             <span class = "inners">
@@ -38,8 +37,8 @@
         <!-- ふりがな -->
         <span class = "input-wrapper">
             <span class = "input-label">
-                <label>ふりがな：</label>
-                <label class="need">必須</label>
+                <label for ="FURIGANA">ふりがな：</label>
+                <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
             <span class = "inners">
@@ -54,8 +53,8 @@
         <!-- 郵便番号 -->
         <span class = "input-wrapper">
             <span class = "input-label">
-                <label>郵便番号：</label>
-                <label class="need">必須</label>
+                <label for="POST">郵便番号：</label>
+                <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
             <span class = "inners">
@@ -70,8 +69,8 @@
         <!-- 住所 -->
         <span class = "input-wrapper">
             <span class = "input-label">
-                <label>住所：</label>
-                <label class="need">必須</label>
+                <label for="ADDRESS">住所：</label>
+                <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
             <span class = "inners">
@@ -85,8 +84,8 @@
         <!-- 電話番号 -->
         <span class = "input-wrapper">
             <span class = "input-label">
-                <label>電話番号：</label>
-                <label class="need">必須</label>
+                <label for="TEL">電話番号：</label>
+                <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
             <span class = "inners">
@@ -101,8 +100,8 @@
         <!-- eメール -->
         <span class = "input-wrapper">
             <span class = "input-label">
-                <label>eメール：</label>
-                <label class="need">必須</label>
+                <label for="MAIL">eメール：</label>
+                <label class="required">必須</label>
             </span>
             <br style="margin-bottom: 10px;">
             <span class = "inners">
@@ -118,8 +117,8 @@
             <button id = "delete">削除</button>
         </div>  
 
-        <div id="save-popup" class="popup hiddenText">更新しました。</div>
-        <div id="delete-popup" class="popup hiddenText">クリアしました。</div>
+        <div id="save-popup" class="popup hidden">更新しました。</div>
+        <div id="delete-popup" class="popup hidden">クリアしました。</div>
 
         <script src = "script.js"></script>
     </body>

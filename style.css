@@ -1,11 +1,10 @@
 /*ヘッダー装飾*/
 header{
-    background-color:rgba(34, 130, 255, 0.836);
+    background-color: rgba(34, 130, 255, 0.836);
     padding: 20px;
     text-align: center;
     border-bottom: 8px solid #ffd561;
-    margin: 0px;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
 }
 
 .input-wrapper{
@@ -23,7 +22,7 @@ header{
 /*入力ボックス装飾*/
 input{
     padding: 8px;
-    outline: unset;
+    outline: none;
     border: none;
     width: 310px;
     margin: 15px 15px 15px 0px;
@@ -37,8 +36,8 @@ input{
 }
 
 /*「必須」の文字の装飾*/
-.need{
-    background-color:rgb(255, 30, 30);
+.required{
+    background-color: rgb(255, 30, 30);
     padding: 2px 5px;
     border-radius: 6px;
     color: white;
@@ -46,24 +45,24 @@ input{
 
 /*警告文の装飾*/
 #nameAlert,#postAlert,#addressAlert,#telAlert,#mailAlert,#furiganaAlert{
-    color:red;
-    padding-left:8px;
+    color: red;
+    padding-left: 8px;
 }
 
 /*非表示のためのクラス*/
 .hidden{
-    display:none;
+    display: none;
 }
 
 /*更新ボタン、削除ボタンの装飾*/
 #update,#delete{
     background-color:rgba(214, 214, 214, 0.329);
-    padding:2px 5px;
-    border-radius:6px;
-    height:100px;
-    width:100px;
+    padding: 2px 5px;
+    border-radius: 6px;
+    height: 80px;
+    width: 80px;
     font-size: 18px;
-    cursor:pointer;
+    cursor: pointer;
     margin-right: 60px;
 }
 
@@ -92,12 +91,7 @@ input{
     transition: opacity 1s ease;
 }
 
-/* 非表示状態 */
-.hiddenText {
-    opacity: 0;
-    pointer-events: none;
-}
-
+/*ポップアップ制御*/
 @keyframes popup-fade-move {
     0% {
       transform: translateY(20px);
@@ -107,10 +101,7 @@ input{
       transform: translateY(0px);
       opacity: 1;
     }
-    75% {
-      transform: translateY(-20px);
-      opacity: 0.4;
-    }
+
     100% {
       transform: translateY(-20px);
       opacity: 0;
